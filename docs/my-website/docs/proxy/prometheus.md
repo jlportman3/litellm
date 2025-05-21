@@ -50,7 +50,16 @@ curl --location 'http://0.0.0.0:4000/chat/completions' \
 }'
 ```
 
-View Metrics on `/metrics`, Visit `http://localhost:4000/metrics` 
+View Metrics on `/metrics`.
+
+The metrics endpoint listens on the same port as the LiteLLM proxy. If you change
+the server port using `--port` or the `PORT` environment variable, query
+`/metrics` on that port. For example:
+```shell
+litellm --config config.yaml --port 8080
+# Metrics now available at http://localhost:8080/metrics
+```
+
 ```shell
 http://localhost:4000/metrics
 
